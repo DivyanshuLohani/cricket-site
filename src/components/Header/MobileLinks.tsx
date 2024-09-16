@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Link } from "react-router-dom";
 import ThemeToggleButton from "./ThemeToggleButton";
+import { links } from "./Navlinks";
 
 export function MobileNavLinks() {
   return (
@@ -15,25 +16,18 @@ export function MobileNavLinks() {
       </SheetTrigger>
       <SheetContent>
         <div className="flex flex-col justify-center gap-4">
-          <Link
-            to="/tournaments"
-            className="hover:text-foreground transition-colors duration-300"
-          >
-            Tournaments
-          </Link>
-          <Link
-            to="/teams"
-            className="hover:text-foreground transition-colors duration-300"
-          >
-            Teams
-          </Link>
+          {links.map((link, i) => (
+            <Link
+              to={link.href}
+              key={i}
+              className={`hover:text-foreground transition-colors duration-300 ${
+                location.pathname.startsWith(link.href) ? "text-foreground" : ""
+              }`}
+            >
+              {link.name}
+            </Link>
+          ))}
 
-          <Link
-            to="/leaderboard"
-            className="hover:text-foreground transition-colors duration-300"
-          >
-            Leaderboard
-          </Link>
           <ThemeToggleButton />
         </div>
       </SheetContent>

@@ -1,41 +1,33 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { MobileNavLinks } from "./Header/MobileLinks";
-import ThemeToggleButton from "./Header/ThemeToggleButton";
+import { Link, useLocation } from "react-router-dom";
+import { MobileNavLinks } from "./MobileLinks";
+import ThemeToggleButton from "./ThemeToggleButton";
+import { links } from "./Navlinks";
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
   return (
-    <nav className="flex justify-between items-center py-4 px-8 bg-card">
+    <nav className="flex justify-between items-center py-4 px-8 bg-card sticky top-0 z-10 backdrop-blur-lg">
       <div className="flex gap-10 items-center">
         <Link className="font-bold text-lg flex items-center" to="/">
           <img src="/logo.png" alt="" className="w-20" />
           <span className="hidden md:block">XYZ Organization</span>
         </Link>
         <ul className="hidden md:flex space-x-6 text-muted-foreground font-semibold">
-          <li>
-            <Link
-              to="/tournaments"
-              className="hover:text-foreground transition-colors duration-300"
-            >
-              Tournaments
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/teams"
-              className="hover:text-foreground transition-colors duration-300"
-            >
-              Teams
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/leaderboard"
-              className="hover:text-foreground transition-colors duration-300"
-            >
-              Leaderboard
-            </Link>
-          </li>
+          {links.map((link, i) => (
+            <li key={i}>
+              <Link
+                to={link.href}
+                className={`hover:text-foreground transition-colors duration-300 ${
+                  location.pathname.startsWith(link.href)
+                    ? "text-foreground"
+                    : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="flex gap-4 items-center">
