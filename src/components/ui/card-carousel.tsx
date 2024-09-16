@@ -194,7 +194,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-[200] overflow-auto">
+          <div className="fixed inset-0 h-screen !z-[200] overflow-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -207,11 +207,11 @@ export const Card = ({
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[60] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
+              className="max-w-5xl mx-auto bg-white dark:bg-neutral-900 h-fit  z-[200] my-10 p-4 md:p-10 rounded-3xl font-sans relative"
             >
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-black dark:text-white"
+                className="text-base font-semibold text-black dark:text-white"
               >
                 {card.category}
               </motion.p>
@@ -229,15 +229,17 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="rounded-3xl bg-background h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className="rounded-3xl bg-background h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
         <div className="relative z-40 p-8 bg-gradient-to-b from-black/50 via-transparent to-transparent">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-white text-sm md:text-base font-medium font-sans text-left"
+            className="text-white text-sm md:text-base font-semibold min-w-min font-sans text-left"
           >
-            {card.category}
+            <span className="bg-blue-600/70 px-3 py-1 rounded-full backdrop-blur-sm">
+              {card.category}
+            </span>
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}

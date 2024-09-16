@@ -7,7 +7,7 @@ import { links } from "./Navlinks";
 const Navbar: React.FC = () => {
   const location = useLocation();
   return (
-    <nav className="flex justify-between items-center py-4 px-8 bg-card/90 sticky top-0 z-20 backdrop-blur-lg">
+    <nav className="flex justify-between items-center py-4 px-8 bg-card/90 sticky top-0 z-[11] backdrop-blur-lg">
       <div className="flex gap-10 items-center">
         <Link className="font-bold text-lg flex items-center" to="/">
           <img src="/logo.png" alt="" className="w-20" />
