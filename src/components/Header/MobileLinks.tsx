@@ -18,13 +18,14 @@ export function MobileNavLinks() {
         <div className="flex flex-col justify-center gap-4">
           {links.map((link, i) => (
             <Link
-              to={link.href}
               key={i}
-              className={`hover:text-foreground transition-colors duration-300 ${
+              to={link.href}
+              className={`hover:text-foreground  flex items-center gap-2 transition-colors duration-300 ${
                 location.pathname.startsWith(link.href) ? "text-foreground" : ""
               }`}
             >
-              {link.name}
+              <link.icon />
+              <span>{link.name}</span>
             </Link>
           ))}
 

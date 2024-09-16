@@ -74,10 +74,20 @@ module.exports = {
             backgroundPosition: "-200% 0",
           },
         },
+        bounce: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-80px)" },
+        },
+        spin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "bounce-spin":
+          "bounce 1.5s ease-in-out infinite, spin 1.5s linear infinite",
       },
     },
   },
