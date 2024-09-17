@@ -1,4 +1,4 @@
-import { Info, ShieldHalf, Trophy, User } from "lucide-react";
+import { ShieldHalf, Trophy, User } from "lucide-react";
 
 export const links = [
   {
@@ -15,10 +15,5 @@ export const links = [
     name: "Players",
     href: "/players",
     icon: User,
-  },
-  {
-    name: "About",
-    href: "/about",
-    icon: Info,
   },
 ];
