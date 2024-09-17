@@ -37,8 +37,11 @@ const UpcomingTournaments = () => {
 
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-        {tournaments.map((tournament) => (
-          <BackgroundGradient className="sm:p-10 shadow-lg rounded-lg cursor-pointer relative bg-card">
+        {tournaments.map((tournament, i) => (
+          <BackgroundGradient
+            key={i}
+            className="sm:p-10 shadow-lg rounded-lg cursor-pointer relative bg-card"
+          >
             <div className="flex items-center justify-between">
               <h3 className="text-xl font-semibold">{tournament.name}</h3>
               <Trophy
