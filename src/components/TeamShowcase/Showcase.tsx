@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { BackgroundGradient } from "../ui/background-gradient";
 import TeamCard from "../Teams/TeamCard";
-import { teams } from "@/libs/teams";
+import { teams } from "@/lib/teams";
 
 const TeamShowcase = () => {
   return (

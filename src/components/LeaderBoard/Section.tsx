@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "../ui/table";
-import { teams } from "@/libs/teams";
+import { teams } from "@/lib/teams";
 
 const LeaderboardSection = () => {
   const [sortBy, setSortBy] = useState("Most Wins"); // Default sorting by Most Wins

@@ -13,3 +13,20 @@ export interface Team {
   players: number;
   logo: React.ReactElement;
 }
+
+export interface Tournament {
+  name: string;
+  dates: string;
+  format: string;
+  teams: string[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  matches: any;
+  winner?: string;
+}
+
+export interface Match {
+  date: string;
+  venue: string;
+  teams: Team[];
+  result: string;
+}

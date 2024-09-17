@@ -1,6 +1,7 @@
 import { ThemeProvider } from "./components/theme-provider";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import Tournaments from "./pages/Tournaments";
 
 function App() {
   const router = createBrowserRouter([
@@ -9,8 +10,8 @@ function App() {
       element: <HomePage />,
     },
     {
-      path: "about",
-      element: <div>About</div>,
+      path: "/tournaments",
+      element: <Tournaments />,
     },
   ]);
   return (

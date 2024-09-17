@@ -3,7 +3,7 @@ import Navbar from "@/components/Header/Navbar";
 import LeaderboardSection from "@/components/LeaderBoard/Section";
 import { NewsCard } from "@/components/News/NewsCard";
 import TeamShowcase from "@/components/TeamShowcase/Showcase";
-import UpcomingTournaments from "@/components/Tournaments/Section";
+import UpcomingTournaments from "@/components/Tournaments/UpcomingTournaments";
 import { motion } from "framer-motion";
 
 export default function HomePage() {
