@@ -1,19 +1,13 @@
+import { Team } from "@/lib/types";
 import { motion } from "framer-motion";
 import { Users, Award } from "lucide-react"; // Import Lucide icons
+import React from "react";
 
 interface TeamCardProps {
-  logo: string;
-  teamName: string;
-  captainName: string;
-  recentPerformance: string;
+  team: Team;
 }
 
-const TeamCard: React.FC<TeamCardProps> = ({
-  logo,
-  teamName,
-  captainName,
-  recentPerformance,
-}) => {
+const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
   return (
     <motion.div
       className="relative bg-card rounded-lg shadow-lg p-6 flex flex-col justify-between"
@@ -22,14 +16,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
       transition={{ type: "spring", stiffness: 100 }}
     >
       {/* Team Logo */}
-      <motion.img
-        src={logo}
-        alt={teamName}
-        className="w-16 h-16 object-contain mb-4"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      />
+      {team.logo}
 
       {/* Team Info */}
       <div className="flex flex-col">
@@ -39,7 +26,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          {teamName}
+          {team.name}
         </motion.h3>
 
         {/* Captain Information */}
@@ -50,7 +37,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
           transition={{ delay: 0.3, duration: 0.5 }}
         >
           <Users className="w-5 h-5 text-muted-foreground mr-2" />
-          <p className="text-muted-foreground">Captain: {captainName}</p>
+          <p className="text-muted-foreground">Captain: {team.captain}</p>
         </motion.div>
 
         {/* Performance Information */}
@@ -61,7 +48,9 @@ const TeamCard: React.FC<TeamCardProps> = ({
           transition={{ delay: 0.4, duration: 0.5 }}
         >
           <Award className="w-5 h-5 text-muted-foreground mr-2" />
-          <p className="text-muted-foreground">Recent: {recentPerformance}</p>
+          <p className="text-muted-foreground">
+            Recent: Won {team.performance} of last 10 matches
+          </p>
         </motion.div>
       </div>
 
