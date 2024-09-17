@@ -55,9 +55,6 @@ export const BackgroundGradient = ({
       backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
     },
   };
-  console.log(
-    `bg-[radial-gradient(circle_farthest-side_at_0_100%,${lighterColor},transparent),radial-gradient(circle_farthest-side_at_100%_0,${darkerColor},transparent),radial-gradient(circle_farthest-side_at_100%_100%,${baseColor},transparent),radial-gradient(circle_farthest-side_at_0_0,${baseColor},${darkerColor})]`
-  );
   return (
     <div className={cn("relative p-[4px] group", containerClassName)}>
       <motion.div
