@@ -23,7 +23,7 @@ export default function HomePage() {
               "url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=1467&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-800 to-transparent opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/50 to-background"></div>
 
         {/* Content */}
         <div className="relative z-10 container mx-auto text-center">
