@@ -1,9 +1,15 @@
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 export default function CallToAction() {
   return (
-    <button
-      className={`inline-flex h-12 items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-all focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 hover:bg-right `}
-    >
-      Register Now
-    </button>
+    <Link to="/register">
+      <motion.a
+        type="button"
+        className="inline-flex h-12 items-center justify-center rounded-md border bg-[linear-gradient(110deg,#0055aa,45%,#0077ff,55%,#0055aa)] bg-[length:200%_100%] px-6 font-medium text-white transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-blue-50 hover:bg-right"
+      >
+        Register Now
+      </motion.a>
+    </Link>
   );
 }

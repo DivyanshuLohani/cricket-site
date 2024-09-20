@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import CallToAction from "@/components/Header/CallToAction";
 import Navbar from "@/components/Header/Navbar";
 import LeaderboardSection from "@/components/LeaderBoard/Section";
 import { NewsCard } from "@/components/News/NewsCard";
@@ -28,7 +29,7 @@ export default function HomePage() {
         {/* Content */}
         <div className="relative z-10 container mx-auto text-center">
           <motion.h2
-            className="text-4xl font-bold text-white mb-4"
+            className="text-4xl font-bold dark:text-white mb-4"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6 }}
@@ -37,7 +38,7 @@ export default function HomePage() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-200 mb-8"
+            className="text-lg text-muted-foreground dark:text-muted-foreground mb-8"
             whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -46,14 +47,7 @@ export default function HomePage() {
             tournaments!
           </motion.p>
 
-          <motion.a
-            href="/register" // Link to registration form
-            className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-md shadow-lg transform transition-transform hover:scale-105"
-            whileHover={{ scale: 1.05 }} // Button animation
-            whileTap={{ scale: 0.95 }} // Button shrink on click
-          >
-            Register Now
-          </motion.a>
+          <CallToAction />
         </div>
       </section>
       <Footer />

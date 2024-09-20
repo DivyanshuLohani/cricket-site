@@ -8,7 +8,7 @@ export default function TournamentCard({
   tournament: Tournament;
 }) {
   return (
-    <BackgroundGradient className="sm:p-10 shadow-lg rounded-lg cursor-pointer relative bg-card">
+    <BackgroundGradient className="p-10 shadow-lg rounded-lg cursor-pointer relative bg-card">
       <div className="flex items-center justify-between">
         <h3 className="text-xl font-semibold">{tournament.name}</h3>
         <Trophy className="text-yellow-500 text-2xl" fill="currentColor" />

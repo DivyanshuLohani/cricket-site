@@ -19,7 +19,7 @@ const UpcomingTournaments = () => {
       </h2>
 
       {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden -z-10 top-10">
         <div className="absolute w-32 h-32 bg-opacity-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full top-10 right-10 transform rotate-45" />
         <div className="absolute w-40 h-40 bg-opacity-10 bg-gradient-to-br from-blue-500 to-blue-600  rounded-full bottom-10 left-10 transform rotate-45" />
       </div>

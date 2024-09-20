@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { MobileNavLinks } from "./MobileLinks";
 import ThemeToggleButton from "./ThemeToggleButton";
 import { links } from "./Navlinks";
+import CallToAction from "./CallToAction";
 
 const Navbar: React.FC = () => {
   const location = useLocation();
@@ -33,9 +34,7 @@ const Navbar: React.FC = () => {
       </div>
       <div className="flex gap-4 items-center">
         <ThemeToggleButton className="hidden md:block" />
-        <button className="md:inline-flex h-12 items-center justify-center rounded-md border bg-[linear-gradient(110deg,#0055aa,45%,#0077ff,55%,#0055aa)] bg-[length:200%_100%] px-6 font-medium text-white transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-blue-50 hover:bg-right hidden">
-          Register Now
-        </button>
+        <CallToAction />
 
         <MobileNavLinks />
       </div>
